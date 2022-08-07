@@ -101,17 +101,18 @@ class LineChartsViewController: UIViewController {
         let set0 = LineChartDataSet(entries: dataEntries0, label: "DataSet 0")
         set0.setColor(.systemGreen)
         set0.fillColor = .systemGreen
-        set0.drawFilledEnabled = true
-//        set0.lineWidth = 5
+        set0.drawFilledEnabled = false
+        set0.lineWidth = 5
 
         let dataEntries1 = lineChartViewModel.本益比股價基準Array[1].enumerated().map {
             ChartDataEntry(x: Double($0), y: Double($1) ?? 0)
         }
 
         let set1 = LineChartDataSet(entries: dataEntries1, label: "DataSet 1")
-        set1.setColor(.systemCyan)
-        set1.fillColor = .systemCyan
+        set1.setColor(.systemYellow)
+        set1.fillColor = .systemYellow
         set1.drawFilledEnabled = true
+        set1.fillFormatter = AreaFillFormatter(fillLineDataSet: set0)
 
         let dataEntries2 = lineChartViewModel.本益比股價基準Array[2].enumerated().map {
             ChartDataEntry(x: Double($0), y: Double($1) ?? 0)
@@ -121,6 +122,7 @@ class LineChartsViewController: UIViewController {
         set2.setColor(.systemOrange)
         set2.fillColor = .systemOrange
         set2.drawFilledEnabled = true
+        set2.fillFormatter = AreaFillFormatter(fillLineDataSet: set0)
 
         let dataEntries3 = lineChartViewModel.本益比股價基準Array[3].enumerated().map {
             ChartDataEntry(x: Double($0), y: Double($1) ?? 0)
@@ -130,6 +132,7 @@ class LineChartsViewController: UIViewController {
         set3.setColor(.systemPurple)
         set3.fillColor = .systemPurple
         set3.drawFilledEnabled = true
+        set3.fillFormatter = AreaFillFormatter(fillLineDataSet: set0)
 
         let dataEntries4 = lineChartViewModel.本益比股價基準Array[4].enumerated().map {
             ChartDataEntry(x: Double($0), y: Double($1) ?? 0)
@@ -139,6 +142,7 @@ class LineChartsViewController: UIViewController {
         set4.setColor(NSUIColor(cgColor: CGColor(red: 115/255, green: 83/255, blue: 15/255, alpha: 1)))
         set4.fillColor = NSUIColor(cgColor: CGColor(red: 115/255, green: 83/255, blue: 15/255, alpha: 1))
         set4.drawFilledEnabled = true
+        set4.fillFormatter = AreaFillFormatter(fillLineDataSet: set0)
 
         let dataEntries5 = lineChartViewModel.本益比股價基準Array[5].enumerated().map {
             ChartDataEntry(x: Double($0), y: Double($1) ?? 0)
@@ -148,6 +152,7 @@ class LineChartsViewController: UIViewController {
         set5.setColor(.systemIndigo)
         set5.fillColor = .systemIndigo
         set5.drawFilledEnabled = true
+        set5.fillFormatter = AreaFillFormatter(fillLineDataSet: set0)
         
         let dataEntries6 = lineChartViewModel.stockPriceArray.enumerated().map {
             ChartDataEntry(x: Double($0), y: Double($1) ?? 0)
@@ -171,6 +176,9 @@ class LineChartsViewController: UIViewController {
         
         let data = LineChartData(dataSets: sets)
         chartView.data = data
+        
+        chartView.renderer = CustomLineChartRenderer(dataProvider: chartView, animator: chartView.chartAnimator, viewPortHandler: chartView.viewPortHandler)
+        
         chartView.highlightValue(x: lineChartViewModel.highlightX, dataSetIndex: 0, callDelegate: true)
     }
     

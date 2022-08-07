@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04437F52289FF17A001CB6D8 /* AreaFillFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04437F51289FF17A001CB6D8 /* AreaFillFormatter.swift */; };
+		04437F54289FF1C2001CB6D8 /* CustomLineChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04437F53289FF1C2001CB6D8 /* CustomLineChartRenderer.swift */; };
 		04F937EC289B9BDB004CD462 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F937EB289B9BDB004CD462 /* AppDelegate.swift */; };
 		04F937EE289B9BDB004CD462 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F937ED289B9BDB004CD462 /* SceneDelegate.swift */; };
 		04F937F3289B9BDB004CD462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F937F1289B9BDB004CD462 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04437F51289FF17A001CB6D8 /* AreaFillFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaFillFormatter.swift; sourceTree = "<group>"; };
+		04437F53289FF1C2001CB6D8 /* CustomLineChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineChartRenderer.swift; sourceTree = "<group>"; };
 		04F937E8289B9BDB004CD462 /* StockTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F937EB289B9BDB004CD462 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F937ED289B9BDB004CD462 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04437F50289FF141001CB6D8 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				04437F51289FF17A001CB6D8 /* AreaFillFormatter.swift */,
+				04437F53289FF1C2001CB6D8 /* CustomLineChartRenderer.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
 		04F937DF289B9BDB004CD462 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		04F93800289B9E0E004CD462 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				04437F50289FF141001CB6D8 /* Charts */,
 				04F93807289BB862004CD462 /* cell */,
 				04F93805289BB546004CD462 /* HomeViewController.swift */,
 				04F9380C289BC69C004CD462 /* LineChartsViewController.swift */,
@@ -282,8 +296,10 @@
 				04F9380F289CDFBD004CD462 /* Webservice.swift in Sources */,
 				04F93816289D0D22004CD462 /* LineChartsViewModel.swift in Sources */,
 				04F93811289CE24E004CD462 /* Stock.swift in Sources */,
+				04437F54289FF1C2001CB6D8 /* CustomLineChartRenderer.swift in Sources */,
 				04F937EC289B9BDB004CD462 /* AppDelegate.swift in Sources */,
 				04F937EE289B9BDB004CD462 /* SceneDelegate.swift in Sources */,
+				04437F52289FF17A001CB6D8 /* AreaFillFormatter.swift in Sources */,
 				04F93806289BB546004CD462 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
